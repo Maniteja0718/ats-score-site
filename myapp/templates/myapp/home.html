@@ -1,0 +1,24 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+
+<h2>ATS Resume Score Checker</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <label for="resume">Upload Resume:</label><br>
+    <input type="file" name="resume" accept=".pdf,.docx" required><br><br>
+    
+    <label for="jobdesc">Paste Job Description:</label><br>
+    <textarea name="jobdesc" rows="10" cols="50" required></textarea><br><br>
+
+    <button type="submit">Check ATS Score</button>
+</form>
+
+{% if score %}
+    <h3 class="{% if score < 40 %}low{% elif score < 70 %}mid{% else %}high{% endif %}">
+        ATS Score: {{ score }}%
+    </h3>
+    <p>{{ message }}</p>
+{% endif %}
+
