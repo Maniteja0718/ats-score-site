@@ -53,7 +53,7 @@ MIDDLEWARE = [
     
 ]
 
-ROOT_URLCONF = 'mysite.urls'
+ROOT_URLCONF = 'atsproject.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'mysite.wsgi.application'
+WSGI_APPLICATION = 'atsproject.wsgi.application'
 
 
 # Database
